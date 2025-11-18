@@ -31,36 +31,6 @@ This repository contains the complete pipeline from raw data → insights → da
 
 A full dashboard screenshot is included in the repo (`dashboard.png`).
 
----
-
-## Repository Structure
-
-customer-profitability-retention/
-│
-├── data/
-│ ├── sample_clean_transactions.csv
-│ ├── customers_summary.csv
-│ ├── at_risk_customers.csv
-│
-├── notebook/
-│ └── 01_data_cleaning_and_sqlite.ipynb
-│
-├── dashboard/
-│ └── customer_profitability.pbix
-│
-├── visuals/
-│ ├── Top10 Profit.png
-│ ├── Total Profit.png
-│ ├── customer revenue vs order frequency.png
-│ └── dashboard.png
-│
-└── README.md
-
-yaml
-Copy code
-
----
-
 ## Data Cleaning (Python)
 
 Performed in: `01_data_cleaning_and_sqlite.ipynb`
@@ -81,8 +51,7 @@ Key steps:
   - Recency (days since last activity)  
 - Generated at-risk customer list using RFM-based logic
 
-**Output files included:**  
-`clean_transactions.csv` (full dataset)  
+**Output files included:**   
 `customers_summary.csv`  
 `at_risk_customers.csv`  
 `sample_clean_transactions.csv`
@@ -187,10 +156,6 @@ Copy code
 Open:
 dashboard/customer_profitability.pbix
 
-yaml
-Copy code
-
----
 
 ## Author
 
@@ -198,4 +163,4 @@ Copy code
 Data Analyst | Python • SQL • Power BI  
 linkedin.com/in/ishwara-sinha/
 
-(You can add your LinkedIn link here)
+
