@@ -29,7 +29,7 @@ This repository contains the complete pipeline from raw data → insights → da
 
 ## Dashboard Preview
 
-A full dashboard screenshot is included in the repo (./dashboard.png).
+A full dashboard screenshot is included in the repo ('dashboard.png) ![Dashboard Preview](./dashboard.png).
 
 ## Data Cleaning (Python)
 
@@ -161,6 +161,6 @@ dashboard/customer_profitability.pbix
 
 **Ishwara Sinha**  
 Data Analyst | Python • SQL • Power BI  
-linkedin.com/in/ishwara-sinha/
+[LinkedIn](https://linkedin.com/in/ishwara-sinha)
 
 
