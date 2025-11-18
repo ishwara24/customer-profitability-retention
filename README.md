@@ -1,48 +1,45 @@
 # customer-profitability-retention
 End-to-end Customer Profitability &amp; Retention Analysis (Python + SQL + Power BI)
 
-📊 Customer Profitability & Retention Analysis
-End-to-end Data Analytics Project (Python • SQL • Power BI)
+Customer Profitability & Retention Analysis
+End-to-End Data Analytics Project (Python • SQL • Power BI)
 
-This project analyzes customer profitability, retention patterns, churn behavior, and at-risk segments using the Online Retail II dataset.
-It demonstrates a full-stack data analyst workflow:
+This project delivers a complete customer profitability and retention analysis using the Online Retail II dataset. It covers the full data analytics pipeline:
 
-✔ Data Cleaning & Transformation (Python)
-✔ SQL-style aggregations & cohort preparation
-✔ Customer segmentation using RFM
-✔ Profitability & retention deep-dive
-✔ Interactive Power BI Dashboard
-✔ Business insights + recommended actions
+Data cleaning & transformation in Python
 
-This is a real-world, industry-ready analysis suitable for retail, e-commerce, or subscription-based companies.
+Customer-level metrics via SQL-style aggregations
 
-⭐ Dashboard Preview
-(Full interactive PBIX available in repo)
+Cohort retention analysis
 
-🧠 Executive Summary
+RFM segmentation & churn identification
 
-Goal: Identify which customers drive profit, who is at risk of churn, and how retention evolves over time — enabling better targeting and marketing ROI.
+Profitability deep-dive
 
-Key Insights:
+Final Power BI dashboard with business insights
 
-40.8% churn (180 days) → high customer leakage
+📌 Project Overview
 
-Top 10% customers contribute 63.9% of total revenue → concentration risk
+The goal is to understand:
 
-Post-2010 cohorts show declining retention → customer loyalty weakening
+Which customers drive the majority of profit
 
-3,000+ customers active in last 90 days → strong core segment
+How retention trends change over time
 
-Significant “At-Risk” RFM group → win-back opportunity
+What churn patterns exist
 
-High-value customers (top 1%) generate ~32% total profit
+Which segments require attention
 
-These insights directly support
-📈 Retention strategy,
-🎯 Profit optimization, and
-💰 Marketing spend allocation.
+Where business value can be increased
 
-🗂 Project Architecture
+This analysis produces actionable insights relevant for retail, e-commerce, and subscription industries.
+
+📊 Dashboard Preview
+
+(Screenshot included in repo)
+dashboard.png
+
+📁 Repository Structure
 customer-profitability-retention/
 │
 ├── data/
@@ -50,11 +47,11 @@ customer-profitability-retention/
 │   ├── customers_summary.csv
 │   ├── at_risk_customers.csv
 │
-├── dashboard/
-│   └── customer_profitability.pbix
-│
 ├── notebook/
-│   └── 01_data_cleaning_and_sqlite.ipynb
+│   ├── 01_data_cleaning_and_sqlite.ipynb
+│
+├── dashboard/
+│   ├── customer_profitability.pbix
 │
 ├── visuals/
 │   ├── Top10 Profit.png
@@ -64,190 +61,172 @@ customer-profitability-retention/
 │
 └── README.md
 
-🔧 Tech Stack
-Component	Tools Used
-Data Cleaning	Python (Pandas, NumPy), Colab
-Database	SQLite (via pandas to_sql)
-Analytics	SQL-style aggregations, Cohort Analysis, RFM Segmentation
-Visualization	Power BI Desktop
-Version Control	Git + GitHub
-🧹 Data Cleaning & Preparation (Python)
+🧹 Data Cleaning Summary (Python)
 
-Performed in 01_data_cleaning_and_sqlite.ipynb.
+Performed in:
+01_data_cleaning_and_sqlite.ipynb
 
-✔ Steps Completed
+Key steps:
 
-Handled missing values (InvoiceDate, CustomerID)
+Loaded raw Online Retail II dataset
 
-Removed invalid or negative transactions
+Removed invalid/negative quantities
 
-Extracted invoice month for cohorts
+Cleaned inconsistent date formats
 
-Fixed inconsistent date formats
+Parsed timestamps safely
 
-Converted InvoiceDate to datetime safely
+Removed transactions without CustomerID
 
-Created customer-level summary table:
+Created clean_transactions dataset (~1M rows)
+
+Built customer-level summary table:
 
 Total revenue
 
 Number of orders
 
-Avg order value
+Average order value
 
-Recency (days since last transaction)
+Last transaction date
 
-Generated “At-Risk Customer” file (RFM logic)
+Days since last activity (Recency)
 
-Final Cleaned Files (Included):
+Identified “At-Risk Customers” using RFM rules
 
-clean_transactions.csv (full dataset)
+Final output datasets:
 
-sample_clean_transactions.csv (GitHub-friendly)
+clean_transactions.csv
 
 customers_summary.csv
 
 at_risk_customers.csv
 
-📈 Analytics Performed
-### 1. Cohort Retention Analysis
+🔍 Analytics Performed
+1. Cohort Retention Analysis
 
-Tracks customer retention for each acquisition month across 12 months.
+Retention calculated month-over-month for each acquisition cohort.
 
-2. Customer Profitability Analysis
+2. Profitability Analysis
 
-Revenue per customer
+Revenue & profit per customer
 
-Profit contribution
+Top 10 customers
 
 Cumulative profit curve
 
-Top 1% & top 10% revenue concentration
+Concentration risk analysis
 
-3. RFM Segmentation
+Top 1% customers
 
-Creates customer groups such as:
+Top 10% customers
+
+3. Churn Analysis
+
+180-day inactivity used as churn threshold.
+
+4. RFM Segmentation
+
+Customer labeled into:
 
 High Value
 
-At-Risk
-
 Loyal
 
-Low-Value
+At Risk
 
-New
+Low Value
 
-4. Churn Analysis
+New Customers
 
-Using 60d / 90d / 180d inactivity thresholds.
+5. Behavioral Analysis
 
-5. Scatter Analysis: Customer Revenue vs Order Frequency
+Scatter plot:
+Revenue vs Order Frequency (bubble = Avg Order Value)
 
-Bubble = Avg Order Value.
+📈 Power BI Dashboard Features
 
-📊 Power BI Dashboard
-Pages Included:
+The dashboard includes:
 
-Executive Summary KPIs
-(Total Customers, Revenue, Profit, Churn, Active Customers)
-
-Customer Behavior & Segmentation
+Executive KPI summary
 
 Cohort heatmap
 
-RFM cards
-
 At-Risk customer table
 
-Profitability & Deep Dive
+RFM segmentation cards
 
-Top 10 customers by profit
+Profitability deep dive
 
-Profit by cohort
+Custom slicers for country, cohort month, segment
 
-Distribution charts
+Interactive filtering
 
-The .pbix file is included for recruiters to explore.
+Insights summary pane
 
-💡 Business Recommendations
-1. Reduce churn (40.8%)
+Power BI file:
+customer_profitability.pbix
 
-Trigger personalized email campaigns for customers inactive for 60–90 days.
+💡 Insights Summary
 
-Launch loyalty rewards tied to order frequency.
+40.8% churn (180 days) → large opportunity to improve retention
 
-2. Protect the top 10% customers
+Top 10% customers contribute 63.9% of total revenue → high dependency on elite group
 
-Since they contribute 63.9% of revenue, offer:
+Post-2010 cohorts show lower retention → decreasing customer loyalty
 
-VIP pricing
+3,000+ active customers in last 90 days → strong recurring base
+
+RFM model highlights a significant “At Risk” group needing win-back campaigns
+
+📌 Recommendations
+1. Improve Customer Retention
+
+Trigger automated campaigns for 60–90 day inactivity
+
+Introduce loyalty rewards or subscription benefits
+
+2. Protect High-Value Customers
+
+VIP discounts
 
 Early access to new products
 
-Dedicated support
+Personalized offers
 
-Handcrafted win-back offers if inactive
+3. Restore Cohort Health
 
-3. Fix declining cohort retention
+Improve post-purchase experience
 
-Improve first-purchase experience
+Provide product bundles to increase purchase frequency
 
-Provide onboarding (tutorial emails, bundle offers)
+4. Target “At Risk” Customers
 
-Introduce subscription-like benefits
+Personalized win-back emails
 
-4. Monetize high AOV group
+Offer incentives based on order history
 
-Create product bundles to raise order frequency.
-
-🚀 How to Recreate This Project Locally
+🚀 How to Use This Repository
 1. Clone the repo
 git clone https://github.com/ishwara24/customer-profitability-retention.git
 
-2. Install Python dependencies
-pip install pandas numpy matplotlib seaborn
+2. Install dependencies
+pip install pandas numpy
 
-3. Run the notebook
+3. Run notebook
 
-Open:
+Open in Jupyter/Colab:
 
 notebook/01_data_cleaning_and_sqlite.ipynb
 
-4. Open the Power BI Dashboard
+4. Open Power BI dashboard
 
-File → Open →
+Launch:
+
 dashboard/customer_profitability.pbix
 
-⭐ Why This Project Matters (Recruiter-Friendly Section)
-
-This project demonstrates:
-
-✔ SQL + Python + Power BI in one workflow
-
-(A critical skill for data analyst roles)
-
-✔ Ability to clean 1M+ rows of messy real-world data
-
-(Not just toy datasets)
-
-✔ Strong business storytelling
-
-(turning data → insights → strategy)
-
-✔ Dashboard design skill
-
-(highly valued in analytics & product teams)
-
-✔ End-to-end ownership
-
-(from raw dataset → insights → dashboard → repo)
-
-This is a hire-ready, industry-standard analytics project.
-
-🙋‍♀️ Author
+👩‍💻 Author
 
 Ishwara Sinha
-Data Analyst (Python, SQL, Power BI)
-📧 [Add your email here if you want]
-🔗 [LinkedIn link]
+Data Analyst — Python | SQL | Power BI
+linkedin.com/in/ishwara-sinha/
