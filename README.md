@@ -29,7 +29,7 @@ This repository contains the complete pipeline from raw data → insights → da
 
 ## Dashboard Preview
 
-A full dashboard screenshot is included in the repo (`dashboard.png`).
+A full dashboard screenshot is included in the repo (./dashboard.png).
 
 ## Data Cleaning (Python)
 
